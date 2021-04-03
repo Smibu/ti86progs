@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+mkdir -p out
+
+./spasm -I inc asmtohex.asm out/asmtohex.86p
+./spasm -I inc bignum.asm out/bignum.86p
+./spasm -I inc journey.asm out/journey.86p
+./spasm -I inc kalent.asm out/kalent.86p
+./spasm -I inc ox.asm out/ox.86p
+./spasm -I inc snake.asm out/snake.86p
+./spasm -I inc speed.asm out/speed.86p
+./spasm -I inc testi.asm out/testi.86p
+./spasm -I inc yatzy.asm out/yatzy.86p
+./spasm -I inc -I drod drod/drod.asm out/drod.86p
+./spasm -I inc -I drod drod/drodedit.asm out/drodedit.86p
+./spasm -I inc sudoku/sudoku.asm out/sudoku.86p
+./spasm -I inc sudoku/sudsolve.asm out/sudsolve.86p
+./spasm -I inc sudoku/delsud.asm out/delsud.86p
