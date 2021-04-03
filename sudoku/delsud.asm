@@ -1,4 +1,4 @@
-#include "ti86asm.inc"
+#include "ti86.inc"
 
 .org _asm_exec_ram
  ld hl,SaveBoardname-1

@@ -1,13 +1,6 @@
-#include "ti86asm.inc"
-#include "ti86math.inc"
-#include "asm86.h"
+#include "ti86.inc"
 
 .org _asm_exec_ram
-_asapvar = $d6fc
-_set_abs_src_addr = $4647
-_set_abs_dest_addr = $5285
-_set_mm_num_bytes = $464f
-_mm_ldir = $52ed
 level = _textShadow
 x = _textShadow+1
 y = _textShadow+2
@@ -124,12 +117,12 @@ showlevel:
 speedown:
  ld a,(spd)
  dec a
- jr z,waitkey
+ jp z,waitkey
  jr showspeed
 speedup:
  ld a,(spd)
  cp 9
- jr z,waitkey
+ jp z,waitkey
  inc a
 showspeed:
  ld (spd),a

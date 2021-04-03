@@ -1,4 +1,4 @@
-#include "ti86asm.inc"
+#include "ti86.inc"
 ;.plugin lite86
 .org _asm_exec_ram
  call _clrLCD

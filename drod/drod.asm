@@ -1,20 +1,7 @@
-#include "ti86asm.inc"
-#include "asm86.h"
+#include "ti86.inc"
 .org _asm_exec_ram
 
-_ldhlind =$4010
-_RAM_Page_7     =$47f3
-_PTEMP_END      =$d29a
-_ex_ahl_bde     =$45f3
-_ahl_plus_2_pg3     =$4c3f
-_set_abs_dest_addr  =$5285
-_set_abs_src_addr   =$4647
-_set_mm_num_bytes   =$464f
-_mm_ldir        =$52ed
 _ldhlz = $437b
-_createstrng = $472f
-_Get_Word_ahl =$521d
-_asapvar =$d6fc
 CurrentRoom =_plotSScreen
 background =_plotSScreen+144
 
@@ -63,7 +50,7 @@ ProgStart:
  xor a
  ld (temp),a
  ld (demo),a
- ld (savegame),a
+ ld (hassavegame),a
  ld (demofilename),a
  inc a
  ld (choice),a
@@ -93,7 +80,7 @@ NoTitleScreen:
  jr c,MainMenu
  ld a,1
  ld (sel),a
- ld (savegame),a
+ ld (hassavegame),a
  ld hl,continuetxt
  ld bc,256*40+40
  call PrintText
@@ -114,7 +101,7 @@ MainMenu:
  dec a
  push af
  ld a,1
- ld (savegame),a
+ ld (hassavegame),a
  call z,ClearBottom
  pop af
  jp z,RestartRoom
@@ -555,7 +542,7 @@ TitleScreenFile: .db 7,"drodtit"
 DemoFileid: .db 0,"demo"
 demofilename: .db 0,"xxxxxxxx"
 filename: .db 0,0,0,0,0,0,0,0,0
-savegame: .db 0   ;is there a save game
+hassavegame: .db 0   ;is there a save game
 fileptr: .dw _plotSScreen
 fileend: .db 0,0      ;pointer to end of files (levels/demos)
 choice: .db 1

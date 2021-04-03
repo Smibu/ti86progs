@@ -1,4 +1,4 @@
-#include "ti86asm.inc"
+#include "ti86.inc"
 .org _asm_exec_ram
  call _runindicoff
  call _clrLCD
@@ -67,28 +67,7 @@ MakeMove:
  and %00111111
  ld c,a
  push bc
-FindPixel:
- ld h,63
- add a,a
- add a,a
- ld l,a
- ld a,b
- rra
- add hl,hl
- rra
- add hl,hl
- rra
- or l
- ld l,a
- ld a,b
- and 7
- ld bc,FP_Bits
- add a,c
- ld c,a
- adc a,b
- sub c
- ld b,a
- ld a,(bc)
+ call FindPixel
 PixelPut:
 ; halt
 Mode:
@@ -102,7 +81,8 @@ Mode:
  pop bc
  ret
 
-FP_Bits: .db $80,$40,$20,$10,$08,$04,$02,$01
+#include "findpixel.asm"
+
 Positions: .db 255,255,0,255,1,255,255,0,1,0,255,1,0,1,1,1
 Text1: .db "1-Pixel On",0
 Text2: .db "2-Pixel Change",0

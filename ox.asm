@@ -1,5 +1,4 @@
-#include "ti86asm.inc"
-#include "asm86.h"
+#include "ti86.inc"
 _ldhlz = $437b
 field = $8100
 .org _asm_exec_ram
@@ -151,11 +150,11 @@ down:
  inc a
  ld (y),a
  call invertselect
- jr waitkey2
+ jp waitkey2
 left:
  ld a,(x)
  cp 0
- jr z,waitkey2
+ jp z,waitkey2
  call invertselect
  ld a,(screenx)
  cp 0

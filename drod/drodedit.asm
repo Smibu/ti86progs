@@ -1,20 +1,8 @@
-#include "ti86asm.inc"
-#include "asm86.h"
+#include "ti86.inc"
 .org _asm_exec_ram
 _ldhlz = $437b
-_ex_ahl_bde     =$45f3
-_ahl_plus_2_pg3     =$4c3f
-_set_abs_dest_addr  =$5285
-_set_abs_src_addr   =$4647
-_set_mm_num_bytes   =$464f
-_mm_ldir        =$52ed
-_createstrng = $472f
-_RAM_Page_7     =$47f3
-_PTEMP_END      =$d29a
-_Get_Word_ahl =$521d
 string =_plotSScreen
 CurrentRoom =string+512
-_asapvar =$d6fc
 
 ;.plugin lite86
     nop

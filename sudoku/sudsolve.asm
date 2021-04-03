@@ -1,4 +1,4 @@
-#include "ti86asm.inc"
+#include "ti86.inc"
 .org _asm_exec_ram
 _ldhlz = $437B
 
@@ -279,11 +279,11 @@ CheckNumberLoop:
  inc a
  ld (numpossibles),a
  dec a
- jr z,OnlyPossible
+ jr z,OnlyPoss
  xor a
  ld (onlypossible),a
  jr Done
-OnlyPossible:
+OnlyPoss:
  pop af
  ld (onlypossible),a
  push af
@@ -617,7 +617,7 @@ columnloop:
  inc a
  ld (numpossibles),a
  cp 2
- jr z,done
+ jr z,done2
  call RestoreCursorCoordinates
  ld hl,(x)
  ld (onlypossiblecoords),hl
@@ -635,7 +635,7 @@ NotPossible3:
  pop bc
  djnz rowloop
  ret
-done:
+done2:
  pop bc
  pop bc
  ret

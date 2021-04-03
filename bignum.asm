@@ -1,4 +1,5 @@
-#include "ti86asm.inc"
+#include "ti86.inc"
+_dispAHL          equ	4a33h
 .org _asm_exec_ram
  nop
  jp ProgStart
@@ -161,7 +162,7 @@ MemoryError:
  ld (_curRow),bc
  ld hl,MemErrTxt
  call _puts
- call Wait
+ call Wait2
  pop bc
  ld (_curRow),bc
  jp _clrLine
@@ -921,13 +922,13 @@ ViewLoop:
  call _ldhlind
  xor a
  call _dispAHL
- call Wait
+ call Wait2
 Quit:
  call _clrScrn
  res onInterrupt,(iy+onflags)
  jp _homeup
 
-Wait:
+Wait2:
  halt
  call _getky
  jp z,Wait

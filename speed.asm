@@ -1,12 +1,7 @@
-#include "ti86asm.inc"
+#include "ti86.inc"
 
 .org _asm_exec_ram
 _ldhlz = $437B
-_asapvar        =$d6fc
-_set_abs_src_addr   =$4647
-_set_abs_dest_addr  =$5285
-_set_mm_num_bytes   =$464f
-_mm_ldir        =$52ed
 ;c9fa = 51706 (userdata)
 ;       52218 (numberdata)
     nop

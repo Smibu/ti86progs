@@ -87,7 +87,7 @@ Waitkey:
  halt
  call _getky
  cp K_EXIT
- jr z,Quit
+ jp z,Quit
  cp K_RIGHT
  jr z,SearchLoop
  cp K_ENTER

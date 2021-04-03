@@ -1,13 +1,5 @@
-#include "ti86asm.inc"
-#include "ti86ops.inc"
-#include "asm86.h"
+#include "ti86.inc"
 .org _asm_exec_ram
-_asapvar = $d6fc
-_set_abs_src_addr = $4647
-_set_abs_dest_addr = $5285
-_set_mm_num_bytes = $464f
-_mm_ldir = $52ed
-.plugin lite86
     nop
     jp ProgStart
     .dw 0
@@ -113,7 +105,7 @@ right:
  jp z,centup
  cp 3
  jp z,yrup
- jr waitkey
+ jp waitkey
 monthdown:
  ld a,(month)
  cp 1
@@ -266,9 +258,9 @@ checkcentury:
  cp 1
  jp z,t2set6
  cp 8
- jr z,t2set6
+ jp z,t2set6
  cp 15
- jr z,t2set6
+ jp z,t2set6
  cp 2
  jr z,t2set5
  cp 9

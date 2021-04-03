@@ -1,14 +1,6 @@
-#include "ti86asm.inc"
+#include "ti86.inc"
 .org _asm_exec_ram
-_ex_ahl_bde     =$45f3
-_ahl_plus_2_pg3     =$4c3f
-_set_abs_dest_addr  =$5285
-_set_abs_src_addr   =$4647
-_set_mm_num_bytes   =$464f
-_mm_ldir        =$52ed
 _ldhlz = $437B
-_createstrng = $472f
-_ldhlind = $4010
 
 board = _plotSScreen
 PermanentNumbers = board+81
@@ -678,7 +670,7 @@ DoVerticalLine:
 
 PutNumber:
  ld b,a
- ld hl,Numbers-6
+ ld hl,NumberSprites-6
  ld de,6
 FindNumberLoop:
  add hl,de
@@ -1041,7 +1033,7 @@ ScoreResetLoop:
  ld (randseed),hl
  ret
 
-Numbers:
+NumberSprites:
  .db %10001000
  .db %10011000
  .db %10001000

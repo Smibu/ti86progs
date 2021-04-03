@@ -1,6 +1,4 @@
-#include "ti86asm.inc"
-;#include "ti86math.inc"
-;#include "asm86.h"
+#include "ti86.inc"
 .org _asm_exec_ram
 level = _textShadow
 xcoord = _textShadow+1
@@ -8,10 +6,6 @@ ycoord = _textShadow+2
 sxcoord = _textShadow+3
 sycoord = _textShadow+4
 _ConvOP = $5577
-_random = $55da
-_setXXop1 = $4613
-_setXXop2 = $4617
-_asapvar = $d6fc
 lastk = _textShadow+5
  nop
  jp ProgStart
@@ -114,7 +108,7 @@ putpixels:
  ld a,(xcoord)
  cp 127
  jr z,getcmd
- jr generateloop
+ jp generateloop
 atoomuch:
  dec a
  ret
