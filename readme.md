@@ -68,6 +68,8 @@ Attempts to solve the given Sudoku board. Supports loading board directly from t
 
 Add, subtract, multiply, divide or square large integers.
 
+![](screenshots/bignum.gif)
+
 #### Calendar
 
 Displays calendar for the given month and year.
