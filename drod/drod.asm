@@ -63,13 +63,11 @@ ProgStart:
  call _flushallmenus
  call _clrLCD
  call _homeup
-;Display title screen if exists
- ld hl,$fc00
- ld (Destination),hl
- ld hl,TitleScreenFile-1
- call LoadFile
- call nc,wait
-NoTitleScreen:
+;Display title screen
+ ld hl,TitleScreenData
+ ld de,$fc00
+ ld bc,LogoEnd-TitleScreenData
+ ldir
  call ClearBottom
  ld a,2
  ld (sel),a
@@ -783,6 +781,7 @@ SaveAddresses:
 #include "drodsub.asm"
 #include "drodsprites.asm"
 #include "drodgame.asm"
+#include "drodtitle.asm"
 
 ;variables that will be saved:
 savegamedata:
