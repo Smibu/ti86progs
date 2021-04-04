@@ -59,3 +59,7 @@ Displays calendar for the given month and year.
 #### ASM to hex -converter
 
 Converts a TI-86 assembly program to an "uncompiled" hex program that can be edited with the built-in TI-BASIC program editor.
+
+#### Pixel generator
+
+Generates pixels on the screen by choosing an adjacent pixel randomly.
