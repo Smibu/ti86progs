@@ -165,7 +165,7 @@ MemoryError:
  call Wait2
  pop bc
  ld (_curRow),bc
- jp _clrLine
+ jp _eraseEOL
 
 CheckOnlySign:
  ld hl,(TempNumberLength)
@@ -220,7 +220,7 @@ SkipAdd:
  inc hl
  jp (ix)
 EndTempNumberDisplay:
- call _clrLine
+ call _eraseEOL
  jp WaitKey
 
 SwapNumbers:
@@ -417,15 +417,15 @@ NoErrorDuringCopy:
 ClearLines:
  ld bc,256*1+6
  ld (_curRow),bc
- call _clrLine
+ call _eraseEOL
 ClearLinesNotTempNumber:
  ld bc,256*2
  ld (_curRow),bc
- call _clrLine
+ call _eraseEOL
 ClearNumber2Line:
  ld bc,256*2+1
  ld (_curRow),bc
- jp _clrLine
+ jp _eraseEOL
 
 PutMinus:
 ;TempNumberLength must be 0 if you want to type the sign

@@ -1,40 +1,8 @@
+#include "ti86.inc"
 ;Source code for ASM to HEX - editable
 ;Size on calculator: 323 bytes
 
-;All equates used in this program:
-_ahl_plus_2_pg3 =$4c3f
-_asapvar =$d6fc
-_asm_exec_ram =$d748
-_clrLine =$4a8a
-_clrScrn =$4a82
-_cphlde =$403c
-_createprog =$474f
-_curCol =$c010
-_curRow =$c00f
-_delvar =$475f
-_ex_ahl_bde =$45f3
-_GetB_AHL =$46c3
-_getky =$5371
-_Get_Word_ahl =$521d
-_homeup =$4a95
-_Inc_Ptr_ahl =$4637
-K_RIGHT =3
-K_ENTER	=9
-K_EXIT =$37
-_mm_ldir =$52ed
-_mov9b =$427f
-_newline =$4a5f
-_OP1 =$c089
 OutputProgram =$8100
-_PTEMP_END =$d29a
-_putps =$4a3b
-_puts =$4a37
-_RAM_Page_1 =$47e3
-_RAM_Page_7 =$47f3
-_runindicoff =$4ab1
-_set_abs_dest_addr =$5285
-_set_abs_src_addr =$4647
-_set_mm_num_bytes =$464f
 .org _asm_exec_ram
  call _clrScrn
  call _runindicoff
@@ -81,7 +49,7 @@ CopyToOP1Loop:
  ld bc,256*9+1
  ld (_curRow),bc
  call _putps
- call _clrLine
+ call _eraseEOL
 Waitkey:
  halt
  call _getky
