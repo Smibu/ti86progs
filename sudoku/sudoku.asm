@@ -25,7 +25,7 @@ EndOfData = randseed+2
  .dw 0
  .dw ShellTitle+1
 ShellTitle:
- .db 6,"Sudoku v2.2 by Makee",0
+ .db 6,"Sudoku v2.2",0
 
 ProgStart:
  ld hl,$d400
@@ -50,9 +50,6 @@ MenuStart:
  ld (_curRow),hl
  ld hl,ShellTitle
  call _putps
- ld bc,256*1+96
- ld hl,ShellTitle+13
- call PrintText
  ld bc,256*15
  ld (_penCol),bc
  ld hl,generateboardtext

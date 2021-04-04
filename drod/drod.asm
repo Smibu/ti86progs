@@ -565,7 +565,7 @@ noroomfound: .db 0   ;0-1 - to remember if a room wasn't found
 demo: .db 0 ;0-no demo playing/recording, 1-demo playing, 2-demo recording
 MovePointer: .dw _plotSScreen+302 ;pointer to demo's move area
 
-ShellTitle: .db "DROD by Makee",0
+ShellTitle: .db "DROD",0
 continuetxt: .db "Continue game",0
 newgametxt: .db "New game",0
 recorddemotxt: .db "Record demo",0

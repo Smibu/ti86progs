@@ -1,5 +1,4 @@
 ;Source code for ASM to HEX - editable
-;by Makee
 ;Size on calculator: 323 bytes
 
 ;All equates used in this program:

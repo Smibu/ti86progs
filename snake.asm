@@ -15,7 +15,7 @@ spd = _textShadow+8
     .dw 0
     .dw ShellTitle+1
 ShellTitle:
-    .db 12,"Tunnel Snake by Makee",0
+    .db 12,"Tunnel Snake",0
 ProgStart:
  res textInverse,(iy+textflags)
  call _runindicoff

@@ -10,13 +10,13 @@ board = _plotSScreen+81
  .dw 0
  .dw ShellTitle
 ShellTitle:
- .db "Sudoku solver v1.0 by Makee",0
+ .db "Sudoku solver v1.0",0
 
 ProgStart:
  call _runindicoff
  call _flushallmenus
  call _clrLCD
- ld bc,17
+ ld bc,34
  ld hl,ShellTitle
  call PrintText
  call vnewline

@@ -10,7 +10,7 @@ _ldhlz = $437B
     .dw ShellTitle
 
 ShellTitle:
-    .db "Speed game by Makee",0
+    .db "Speed game",0
 
 ProgStart:
  ld hl,$D400

@@ -6,7 +6,7 @@ _dispAHL          equ	4a33h
  .dw 0
  .dw ShellTitle
 ShellTitle:
- .db "Bignum 86 by Makee",0
+ .db "Bignum 86",0
 ;NOTES:
 ;Numbers are stored backwards into memory (except the number that user is typing)
 ;Sign is stored into the end of the number (like 932686-) which means -686239

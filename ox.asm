@@ -25,10 +25,6 @@ ProgStart:
  ld (_curRow),hl
  ld hl,ShellTitle
  call _puts
- ld hl,256*8+96
- ld (_penCol),hl
- ld hl,by
- call _vputs
  ld hl,256*16+40
  ld (_penCol),hl
  ld hl,playertext
@@ -699,7 +695,6 @@ playertext: .db "Player ",0
 playerxtext: .db "X starts",0
 xwintext: .db "X won!",0
 turntext: .db " turn",0
-by: .db "by Makee",0
 ProgramEnd:
 sel = ProgramEnd
 x = ProgramEnd+1

@@ -1274,7 +1274,7 @@ ContrastDown:
  ld b,-1
  jr ChangeContrast
 
-ShellTitle: .db 19,"  DROD Level Editor by Makee",0
+ShellTitle: .db 19,"  DROD Level Editor",0
 newleveltxt: .db "Create new level",0
 opentxt: .db "Open level",0
 filenametxt: .db "Filename:",0
